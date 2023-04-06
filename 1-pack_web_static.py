@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""Fabfile to create a .tgz archive"""
+"""Fabfic for creating .tgz file"""
 import tarfile
 from datetime import datetime
 import os
 
 
 def do_pack():
-    """creates a .tgz archive"""
+    """creates a .tgz file"""
     date = datetime.now().strftime("%Y%m%d%H%M%S")
     filename = "versions/web_static_{}.tgz".format(date)
     if not os.path.exists("versions/"):
