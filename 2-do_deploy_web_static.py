@@ -34,7 +34,8 @@ def do_deploy(archive_path):
         print("Unziping web_static to {}".format(output))
         local("tar -cvzf {} web_static".format(output))
         archize_size = os.stat(output).st_size
-        print("web_static unziped: {} -> {} Bytes".format(output, archize_size))
+        print("web_static unziped: {} -> {} Bytes"
+              .format(output, archize_size))
     except Exception:
         output = None
     return output
@@ -65,4 +66,3 @@ def do_deploy(archive_path):
     except Exception:
         success = False
     return success
-

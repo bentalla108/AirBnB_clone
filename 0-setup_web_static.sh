@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # onfiguration de mon serveur  web_static
 
-echo -e "\e[1;33m START\e[0m"
+echo -e "\e[1;33m STARTING .....\e[0m"
 
 #--packages updating
 sudo apt-get -y update
@@ -35,7 +35,7 @@ echo
 
 #--creation lien symbolic
 sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
-sudo chown -hR ubuntu:ubuntu /data
+sudo chown -R ubuntu:ubuntu /data/
 
 sudo sed -i '38i\\tlocation /hbnb_static/ {\n\t\talias /data/web_static/current/;\n\t}\n' /etc/nginx/sites-available/default
 
